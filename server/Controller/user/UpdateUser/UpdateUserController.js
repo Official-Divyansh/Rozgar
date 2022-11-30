@@ -37,6 +37,8 @@ async function UpdateUserController(req,res){
                 CurrentCtc:req.body.CurrentCtc,
                 Resume:req.body.Resume,
                 skills:req.body.skills
+              },{
+                runValidators:true
               })
               if(UpdateData){
                 res.status(200).send({msg:"SuccessFully Updated the Profile",result:true})
