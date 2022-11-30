@@ -58,3 +58,41 @@ http://localhost:7000/api/v1/user/login
   "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InNvbm55QG1haWwuY29tIiwiaWQiOiI2Mzc0OGVjZGM1YmRkZjA4NWU2NTE1N2QiLCJpYXQiOjE2Njg1ODM3MTEsImV4cCI6MTY2ODY3MDExMX0.eX8HYJdDMUm35Xc0z1rPjM-kgOMo8zx7H8gAuhnSz8A"
 }
 
+********************************************Update Request*****************************************
+
+Patch Request
+http://localhost:7000/api/v1/user/updateuser
+
+**Req body**
+{
+   "FirstName":"Vishal",
+  "LastName":"kumar",
+  "Address1":"plot-10",
+  "Address2":"plot-200",
+  "City":"Lucknow",
+  "Region":"up",
+  "Zipcode":"234312",
+  "Phone":"1231231231",
+  "DOB":"12-10-1800",
+    "phd":"phd in Mathematics",
+    "PostGraduation":"Mtech",
+    "Graduation":"btech",
+    "Intermediate":"yes",
+    "Metric":"shivaji",
+    "Certifications":["computer"],
+    "Role":"Software Engineer",
+    "DesiredJobType":"IT",
+    "DesiredEmployment":"Software",
+    "ExpectedCTC":"24LPA",
+    "PreferedShift":"Flexible",
+    "PreferredLocation":"India",
+    "Gender":"Male",
+    "MaritalStatus":"Single",
+    "Hometown":"Lucknow",
+    "Experience":"1 year",
+    "CurrentlyWorking":true,
+    "WhereWorking":"xyz pvt. ltd.",
+    "CurrentCtc":"3LPA",
+    "Resume":"s4.bucket.com",
+    "skills":["Front","Back"]
+  }

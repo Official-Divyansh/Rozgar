@@ -1,17 +1,19 @@
 const mongoose=require('mongoose')
 
+const maritalstatus=["Married","Single"]
 const UserSchema=new mongoose.Schema({
     name:{
         type:String,
-        required:true
+        required:[true,"Name is a required Field"]
     },
     email:{
         type:String,
-        required:true
+        required:[true,"Email is a Required Field"],
+        unique:true
     },
     password:{
         type:String,
-        required:true
+        required:[true,"Password is a Required Field"]
     },
     FirstName:{
         type:String,
@@ -49,9 +51,28 @@ const UserSchema=new mongoose.Schema({
         type:String,
         default:'NA'
     },
-    Education:{
-        type:Array
-    },
+    Education:[{
+        phd:{
+            type:String,
+            defauld:"NA"
+        },
+        PostGraduation:{
+            type:String,
+            defauld:"NA"
+        },
+        Graduation:{
+            type:String,
+            defauld:"NA"
+        },
+        Intermediate:{
+            type:String,
+            defauld:"NA"
+        },
+        Metric:{
+            type:String,
+            defauld:"NA"
+        }
+    }],
     Certifications:{
          type:Array
     },
@@ -73,7 +94,10 @@ const UserSchema=new mongoose.Schema({
     },
     PreferedShift:{
         type:String,
-        enum:['Day','Night','Flexible']
+        enum:{
+            values:['Day','Night','Flexible'],
+            message:'{value} is not Supported'
+        } 
     },
     PreferredLocation:{
         type:String,
@@ -85,7 +109,7 @@ const UserSchema=new mongoose.Schema({
     },
     MaritalStatus:{
         type:String,
-        enum:["Married","Single"]
+        enum:maritalstatus
     },
     Hometown:{
         type:String,

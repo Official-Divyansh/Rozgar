@@ -9,6 +9,7 @@ const InitializeDB=require("./Config/Database/DB")
 const ReisterRouter=require("./Routes/Register/register.route")
 const LoginController=require("./Routes/Login/login.route")
 const forgotpass = require('./Routes/Forgot-password/forgotpassword')
+const updateUser=require("./Routes/UpdateUser/updateuser")
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
@@ -27,7 +28,7 @@ app.set('view engine', 'handlebars')
 app.use("/api/v1/user",ReisterRouter)
 app.use("/api/v1/user",LoginController)
 app.use("/api/v1/user",forgotpass)
-
+app.use("/api/v1/user",updateUser)
 
 const PORT=process.env.PORT || 7000
 
